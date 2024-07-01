@@ -1,9 +1,13 @@
 com/enviro/assessment/grad001/BoitumeloRakobeloa/controller/DisposalGuidelinesController.class
-com/enviro/assessment/grad001/BoitumeloRakobeloa/service/DisposalGuidelinesService.class
+com/enviro/assessment/grad001/BoitumeloRakobeloa/repo/RecyclingTipRepository.class
+com/enviro/assessment/grad001/BoitumeloRakobeloa/model/RecyclingTip.class
 com/enviro/assessment/grad001/BoitumeloRakobeloa/model/WasteCategory.class
 com/enviro/assessment/grad001/BoitumeloRakobeloa/service/WasteCategoryService.class
 com/enviro/assessment/grad001/BoitumeloRakobeloa/model/DisposalGuidelines.class
+com/enviro/assessment/grad001/BoitumeloRakobeloa/controller/RecyclingTipController.class
+com/enviro/assessment/grad001/BoitumeloRakobeloa/repo/WasteCategoryRepository.class
+com/enviro/assessment/grad001/BoitumeloRakobeloa/service/DisposalGuidelinesService.class
 com/enviro/assessment/grad001/BoitumeloRakobeloa/WasteManagementApplication.class
+com/enviro/assessment/grad001/BoitumeloRakobeloa/service/RecyclingTipService.class
 com/enviro/assessment/grad001/BoitumeloRakobeloa/controller/WasteCategoryController.class
 com/enviro/assessment/grad001/BoitumeloRakobeloa/repo/DisposalGuidelinesRepository.class
-com/enviro/assessment/grad001/BoitumeloRakobeloa/repo/WasteCategoryRepository.class
