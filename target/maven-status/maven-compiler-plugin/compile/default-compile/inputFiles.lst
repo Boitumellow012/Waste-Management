@@ -1,0 +1,9 @@
+/Users/admin/Waste-Management/src/main/java/com/enviro/assessment/grad001/BoitumeloRakobeloa/WasteManagementApplication.java
+/Users/admin/Waste-Management/src/main/java/com/enviro/assessment/grad001/BoitumeloRakobeloa/controller/DisposalGuidelinesController.java
+/Users/admin/Waste-Management/src/main/java/com/enviro/assessment/grad001/BoitumeloRakobeloa/controller/WasteCategoryController.java
+/Users/admin/Waste-Management/src/main/java/com/enviro/assessment/grad001/BoitumeloRakobeloa/model/DisposalGuidelines.java
+/Users/admin/Waste-Management/src/main/java/com/enviro/assessment/grad001/BoitumeloRakobeloa/model/WasteCategory.java
+/Users/admin/Waste-Management/src/main/java/com/enviro/assessment/grad001/BoitumeloRakobeloa/repo/DisposalGuidelinesRepository.java
+/Users/admin/Waste-Management/src/main/java/com/enviro/assessment/grad001/BoitumeloRakobeloa/repo/WasteCategoryRepository.java
+/Users/admin/Waste-Management/src/main/java/com/enviro/assessment/grad001/BoitumeloRakobeloa/service/DisposalGuidelinesService.java
+/Users/admin/Waste-Management/src/main/java/com/enviro/assessment/grad001/BoitumeloRakobeloa/service/WasteCategoryService.java
