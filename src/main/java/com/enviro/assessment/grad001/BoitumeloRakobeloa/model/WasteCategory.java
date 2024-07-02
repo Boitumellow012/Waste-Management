@@ -1,35 +1,17 @@
 package com.enviro.assessment.grad001.BoitumeloRakobeloa.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-
-import javax.validation.constraints.NotNull;
+import jakarta.persistence.*;
 
 @Entity
 public class WasteCategory {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @NotNull
+    @Column
     private String name;
 
-    // Getters and setters
-    public Long getId() {
-        return id;
-    }
+    @Column
+    private String description;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 }
