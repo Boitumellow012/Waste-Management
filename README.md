@@ -1,6 +1,6 @@
 # Waste Management API
 
-This project is a Spring Boot application for managing waste categories and recycling tips. It provides RESTful endpoints for CRUD operations on waste categories and recycling tips.
+This project is a Spring Boot application for managing waste categories and recycling tips. It provides RESTful endpoints for CRUD operations on waste categories, recycling tips and disposal guidelines.
 
 ## Table of Contents
 
@@ -10,7 +10,7 @@ This project is a Spring Boot application for managing waste categories and recy
 - [API Endpoints](#api-endpoints)
     - [Waste Category Endpoints](#waste-category-endpoints)
     - [Recycling Tip Endpoints](#recycling-tip-endpoints)
-- [Error Handling](#error-handling)
+    - [Disposal Guideline Endpoints](#disposal-guideline-endpoints)
 - [License](#license)
 
 ## Overview
@@ -135,6 +135,38 @@ The application will start and run on `http://localhost:7120/h2-ui`.
   DELETE /api/deleteAllRecyclingTip
   ```
 
+### Disposal Guideline Endpoints
+
+- **Get All Recycling Tips**
+  ```http
+  GET /api/getAllDisposalGuidelines
+  ```
+
+- **Get Recycling Tip By ID**
+  ```http
+  GET /api/getDisposalGuidelineById/{id}
+  ```
+
+- **Add Recycling Tip**
+  ```http
+  POST /api/addDisposalGuideline
+  ```
+
+- **Update Recycling Tip**
+  ```http
+  POST /api/updateDisposalGuideline/{id}
+  ```
+
+- **Delete Recycling Tip By ID**
+  ```http
+  DELETE /api/deleteDisposalGuidelineById/{id}
+  ```
+
+- **Delete All Recycling Tip**
+  ```http
+  DELETE /api/deleteAllDisposalGuideline
+  ```
+  
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
