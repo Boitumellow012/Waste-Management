@@ -1,10 +1,17 @@
 package com.enviro.assessment.grad001.BoitumeloRakobeloa.model;
 
 import jakarta.persistence.*;
+import lombok.*;
 
 @Entity
+@Table(name="WasteCategorys")
+@NoArgsConstructor
+@AllArgsConstructor
+@Setter
+@Getter
+@ToString
 public class WasteCategory {
-    @Id
+       @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
@@ -13,5 +20,4 @@ public class WasteCategory {
 
     @Column
     private String description;
-
 }

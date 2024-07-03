@@ -4,12 +4,14 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-@Table(name="RecyclingTips")
+@Table(name="RecyckingTips")
+@NoArgsConstructor
+@AllArgsConstructor
 @Setter
 @Getter
 @ToString
 public class RecyclingTip {
-    @Id
+       @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
@@ -18,7 +20,4 @@ public class RecyclingTip {
 
     @Column
     private String description;
-
-    @Column
-    private String guidelines;
 }

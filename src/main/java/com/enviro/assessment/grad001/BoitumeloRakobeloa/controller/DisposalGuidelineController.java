@@ -1,7 +1,9 @@
+
 package com.enviro.assessment.grad001.BoitumeloRakobeloa.controller;
 
-import com.enviro.assessment.grad001.BoitumeloRakobeloa.repo.DisposalGuidelineRepository;
+
 import com.enviro.assessment.grad001.BoitumeloRakobeloa.model.DisposalGuideline;
+import com.enviro.assessment.grad001.BoitumeloRakobeloa.repo.DisposalGuidelineRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,16 +14,17 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/disposal-guidelines")
+@RequestMapping("/api")
 public class DisposalGuidelineController {
+
     @Autowired
-    DisposalGuidelineRepository disposalGuidelineRepository;
+    DisposalGuidelineRepository DisposalGuidelineRepository;
 
     @GetMapping("/getAllDisposalGuidelines")
     public ResponseEntity<List<DisposalGuideline>> getAllDisposalGuidelines() {
         try {
             List<DisposalGuideline> DisposalGuidelineList = new ArrayList<>();
-            disposalGuidelineRepository.findAll().forEach(DisposalGuidelineList::add);
+            DisposalGuidelineRepository.findAll().forEach(DisposalGuidelineList::add);
 
             if (DisposalGuidelineList.isEmpty()) {
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);
@@ -35,30 +38,34 @@ public class DisposalGuidelineController {
 
     @GetMapping("/getDisposalGuidelineById/{id}")
     public ResponseEntity<DisposalGuideline> getDisposalGuidelineById(@PathVariable Long id) {
-        Optional<DisposalGuideline> DisposalGuidelineObj = disposalGuidelineRepository.findById(id);
-        return DisposalGuidelineObj.map(disposalGuideline -> new ResponseEntity<>(disposalGuideline, HttpStatus.OK)).orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
+        Optional<DisposalGuideline> DisposalGuidelineObj = DisposalGuidelineRepository.findById(id);
+        if (DisposalGuidelineObj.isPresent()) {
+            return new ResponseEntity<>(DisposalGuidelineObj.get(), HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
     }
 
     @PostMapping("/addDisposalGuideline")
     public ResponseEntity<DisposalGuideline> addDisposalGuideline(@RequestBody DisposalGuideline DisposalGuideline) {
         try {
-            DisposalGuideline DisposalGuidelineObj = disposalGuidelineRepository.save(DisposalGuideline);
+            DisposalGuideline DisposalGuidelineObj = DisposalGuidelineRepository.save(DisposalGuideline);
             return new ResponseEntity<>(DisposalGuidelineObj, HttpStatus.CREATED);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
-    }
+    }           
 
     @PostMapping("/updateDisposalGuideline/{id}")
     public ResponseEntity<DisposalGuideline> updateDisposalGuideline(@PathVariable Long id, @RequestBody DisposalGuideline DisposalGuideline) {
         try {
-            Optional<DisposalGuideline> DisposalGuidelineData = disposalGuidelineRepository.findById(id);
+            Optional<DisposalGuideline> DisposalGuidelineData = DisposalGuidelineRepository.findById(id);
             if (DisposalGuidelineData.isPresent()) {
                 DisposalGuideline updatedDisposalGuidelineData = DisposalGuidelineData.get();
-                // updatedDisposalGuidelineData.setGuideline(DisposalGuideline.getGuideline());
-                // updatedDisposalGuidelineData.setAuthor(DisposalGuideline.getAuthor());
+               // updatedDisposalGuidelineData.setGuideline(DisposalGuideline.getGuideline());
+               // updatedDisposalGuidelineData.setAuthor(DisposalGuideline.getAuthor());
 
-                DisposalGuideline DisposalGuidelineObj = disposalGuidelineRepository.save(updatedDisposalGuidelineData);
+                DisposalGuideline DisposalGuidelineObj = DisposalGuidelineRepository.save(updatedDisposalGuidelineData);
                 return new ResponseEntity<>(DisposalGuidelineObj, HttpStatus.CREATED);
             }
 
@@ -71,7 +78,7 @@ public class DisposalGuidelineController {
     @DeleteMapping("/deleteDisposalGuidelineById/{id}")
     public ResponseEntity<HttpStatus> deleteDisposalGuideline(@PathVariable Long id) {
         try {
-            disposalGuidelineRepository.deleteById(id);
+            DisposalGuidelineRepository.deleteById(id);
             return new ResponseEntity<>(HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -80,10 +87,13 @@ public class DisposalGuidelineController {
     @DeleteMapping("/deleteAllDisposalGuidelines")
     public ResponseEntity<HttpStatus> deleteAllDisposalGuidelines() {
         try {
-            disposalGuidelineRepository.deleteAll();
+            DisposalGuidelineRepository.deleteAll();
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
 }
+
+
